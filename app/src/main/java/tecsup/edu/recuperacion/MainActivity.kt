@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -21,10 +22,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         upcomingMovies = findViewById(R.id.upcoming_movies)
-        upcomingMoviesLayoutMgr = LinearLayoutManager(
-            this,
-            LinearLayoutManager.HORIZONTAL,
-            false
+        upcomingMoviesLayoutMgr = GridLayoutManager(
+                applicationContext,2
         )
         upcomingMovies.layoutManager = upcomingMoviesLayoutMgr
         upcomingMoviesAdapter = MoviesAdapter(mutableListOf()) { movie -> showMovieDetails(movie) }

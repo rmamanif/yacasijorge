@@ -41,7 +41,7 @@ class MoviesAdapter(
 
         fun bind(movie: Movie) {
             Glide.with(itemView)
-                .load("https://image.tmdb.org/t/p/w342${movie.posterPath}")
+                .load("https://image.tmdb.org/t/p/w500${movie.posterPath}")
                 .transform(CenterCrop())
                 .into(poster)
 
