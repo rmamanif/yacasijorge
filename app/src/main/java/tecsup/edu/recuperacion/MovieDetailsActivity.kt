@@ -27,7 +27,6 @@ class MovieDetailsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_movie_details)
-
         backdrop = findViewById(R.id.movie_backdrop)
         poster = findViewById(R.id.movie_poster)
         title = findViewById(R.id.movie_title)
@@ -63,5 +62,6 @@ class MovieDetailsActivity : AppCompatActivity() {
         rating.rating = extras.getFloat(MOVIE_RATING, 0f) / 2
         releaseDate.text = extras.getString(MOVIE_RELEASE_DATE, "")
         overview.text = extras.getString(MOVIE_OVERVIEW, "")
+        this.setTitle(extras.getString(MOVIE_TITLE))
     }
 }

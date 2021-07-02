@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">recuperacion</string>
-    <string name="titulo">Lista de películas por estrenar</string>
+    <string name="titulo">Cartelera</string>
     <string name="error_fetch_movies">Please check your internet connection</string>
     <string name="upcoming">Upcoming</string>
     <string name="stay_updated">Stay updated with the latest movies</string>

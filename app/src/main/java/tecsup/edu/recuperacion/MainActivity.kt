@@ -4,9 +4,11 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import android.widget.Toolbar
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.activity_movie_details.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,7 +22,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         upcomingMovies = findViewById(R.id.upcoming_movies)
         upcomingMoviesLayoutMgr = GridLayoutManager(
                 applicationContext,2
@@ -64,6 +65,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun showMovieDetails(movie: Movie) {
         val intent = Intent(this, MovieDetailsActivity::class.java)
+
         intent.putExtra(MOVIE_BACKDROP, movie.backdropPath)
         intent.putExtra(MOVIE_POSTER, movie.posterPath)
         intent.putExtra(MOVIE_TITLE, movie.title)
@@ -71,6 +73,7 @@ class MainActivity : AppCompatActivity() {
         intent.putExtra(MOVIE_RELEASE_DATE, movie.releaseDate)
         intent.putExtra(MOVIE_OVERVIEW, movie.overview)
         startActivity(intent)
+        
     }
 
     private fun onError() {
