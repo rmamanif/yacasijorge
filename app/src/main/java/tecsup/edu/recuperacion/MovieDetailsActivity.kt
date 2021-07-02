@@ -59,7 +59,7 @@ class MovieDetailsActivity : AppCompatActivity() {
                 .into(poster)
         }
 
-        title.text = extras.getString(MOVIE_TITLE, "")
+        title.text = extras.getString(MOVIE_TITLE,"")
         rating.rating = extras.getFloat(MOVIE_RATING, 0f) / 2
         releaseDate.text = extras.getString(MOVIE_RELEASE_DATE, "")
         overview.text = extras.getString(MOVIE_OVERVIEW, "")
