@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
@@ -38,6 +39,7 @@ class MoviesAdapter(
     inner class MovieViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         private val poster: ImageView = itemView.findViewById(R.id.item_movie_poster)
+        private var title: TextView = itemView.findViewById(R.id.item_titulo)
 
         fun bind(movie: Movie) {
             Glide.with(itemView)
@@ -45,7 +47,9 @@ class MoviesAdapter(
                 .transform(CenterCrop())
                 .into(poster)
 
+            title.text = movie.title
             itemView.setOnClickListener { onMovieClick.invoke(movie) }
         }
+
     }
 }
