@@ -47,14 +47,14 @@ class MovieDetailsActivity : AppCompatActivity() {
     private fun populateDetails(extras: Bundle) {
         extras.getString(MOVIE_BACKDROP)?.let { backdropPath ->
             Glide.with(this)
-                .load("https://image.tmdb.org/t/p/w1280$backdropPath")
+                .load("https://image.tmdb.org/t/p/w500$backdropPath")
                 .transform(CenterCrop())
                 .into(backdrop)
         }
 
         extras.getString(MOVIE_POSTER)?.let { posterPath ->
             Glide.with(this)
-                .load("https://image.tmdb.org/t/p/w342$posterPath")
+                .load("https://image.tmdb.org/t/p/w500$posterPath")
                 .transform(CenterCrop())
                 .into(poster)
         }
