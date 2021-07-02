@@ -20,8 +20,8 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/movie_poster_card"
-            android:layout_width="128dp"
-            android:layout_height="172dp"
+            android:layout_width="120dp"
+            android:layout_height="200dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="8dp"
             app:cardCornerRadius="4dp"
